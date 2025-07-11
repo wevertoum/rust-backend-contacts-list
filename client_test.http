@@ -1,0 +1,34 @@
+### Create a new user
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Armando Neto",
+  "genre": "Male",
+  "email": "armandoo@gmail.com"
+}
+
+### List all users
+GET http://localhost:3000/users
+Accept: application/json
+
+### List contacts
+GET http://localhost:3000/contacts
+Accept: application/json
+
+### List specific user by ID
+GET http://localhost:3000/users/f6c04e4b-0691-494d-b61b-10ee609841cd
+Accept: application/json
+
+
+### List specific contact by ID
+GET http://localhost:3000/contacts/35ee403f-21a6-4bde-8517-a7150444bc8a
+Accept: application/json
+
+### Update a contact email
+PUT http://localhost:3000/contacts/35ee403f-21a6-4bde-8517-a7150444bc8a
+Content-Type: application/json
+
+{
+  "email": "johndoeupdated@testmail.com"
+}
