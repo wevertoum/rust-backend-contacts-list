@@ -12,14 +12,26 @@ Content-Type: application/json
 GET http://localhost:3000/users
 Accept: application/json
 
+### List specific user by ID
+GET http://localhost:3000/users/a9d0aa91-bdef-47f9-93c5-0e0484fceddf
+Accept: application/json
+
+### Update a user
+PUT http://localhost:3000/users/a9d0aa91-bdef-47f9-93c5-0e0484fceddf
+Content-Type: application/json
+
+{
+  "name": "Armando Neto Silva"
+}
+
+### Delete a user
+DELETE http://localhost:3000/users/a9d0aa91-bdef-47f9-93c5-0e0484fceddf
+Accept: application/json
+
+
 ### List contacts
 GET http://localhost:3000/contacts
 Accept: application/json
-
-### List specific user by ID
-GET http://localhost:3000/users/f6c04e4b-0691-494d-b61b-10ee609841cd
-Accept: application/json
-
 
 ### List specific contact by ID
 GET http://localhost:3000/contacts/35ee403f-21a6-4bde-8517-a7150444bc8a
@@ -30,5 +42,5 @@ PUT http://localhost:3000/contacts/35ee403f-21a6-4bde-8517-a7150444bc8a
 Content-Type: application/json
 
 {
-  "email": "johndoeupdated@testmail.com"
+  "email": "wevertondev@outlook.com"
 }

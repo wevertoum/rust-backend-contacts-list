@@ -62,21 +62,3 @@ pub async fn update_contact(
         Err(e) => Err((StatusCode::INTERNAL_SERVER_ERROR, e.to_string())),
     }
 }
-
-pub async fn delete_contact(
-    State(state): State<AppState>,
-    Path(id): Path<Uuid>,
-) -> Result<StatusCode, (StatusCode, String)> {
-    let result = ContactEntity::delete_by_id(id).exec(&*state.db_conn).await;
-
-    match result {
-        Ok(delete_result) => {
-            if delete_result.rows_affected == 1 {
-                Ok(StatusCode::NO_CONTENT)
-            } else {
-                Err((StatusCode::NOT_FOUND, "Contact not found".to_string()))
-            }
-        }
-        Err(e) => Err((StatusCode::INTERNAL_SERVER_ERROR, e.to_string())),
-    }
-}
